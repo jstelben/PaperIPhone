@@ -147,7 +147,7 @@ int numBumpers = 3;
     {
         [self resetBall];
     }
-    lblScore.text = [NSString stringWithFormat:@"Score: %d  Previous Score: %d  Best Score: %d", score, prevScore, bestScore];
+    lblScore.text = [NSString stringWithFormat:@"Score: %d  Previous Score: %d  Best: %d", score, prevScore, bestScore];
     [m UpdateFalling:elapsed];
     int disabledBumpers = 0;
     for(int i = 0; i < numBumpers; i++)
@@ -207,7 +207,7 @@ int numBumpers = 3;
 
 -(void)loadTapsGame
 {
-    lblScore = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 150, 50)];
+    lblScore = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 350, 50)];
     [lblScore setBackgroundColor:[UIColor clearColor]];
     [lblScore setTextColor:[UIColor blackColor]];
     lblScore.text = @"Score: 0";
@@ -274,8 +274,9 @@ int numBumpers = 3;
     /*[bumpers addObject:[[Peg alloc] initX:250 initY:70]];
     [bumpers addObject:[[CircleBumper alloc] initX:150 initY:170]];
     [bumpers addObject:[[SquareTarget alloc] initX:50 initY:270]];*/
+    NSLog(@"KEy: %@", dict.allKeys[0]);
     NSDictionary* more = dict[@"entities"];
-    //NSLog(@"KEy: %@", dict.allKeys[0]);
+    
     int counter = 0;
     float x, y, width, height;
     NSArray* list = [more objectForKey:@"class5"];
